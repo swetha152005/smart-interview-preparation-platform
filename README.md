@@ -478,7 +478,7 @@ Add screenshots of the following pages here:
 ![ Home Page ](/screenshots/homepage%20(2).png)
 
 
-### Dash Board
+### DashBoard
 
 
 ![ DashBoard ](/screenshots/dashboard.png)
@@ -486,7 +486,7 @@ Add screenshots of the following pages here:
 
 
 
-### Register Page
+### RegisterPage
 
 
 ![Register Page ](/screenshots/register.png)
@@ -495,9 +495,9 @@ Add screenshots of the following pages here:
 
 ### My Bookmarks
 
-```text
-[ Bookmarks ](/screenshots/bookmark.png)
-```
+
+![ Bookmarks ](/screenshots/bookmark.png)
+
 
 ---
 
