@@ -27,7 +27,7 @@ function CompanyQuestions() {
 
     axios
       .get(
-        `http://localhost:5000/api/questions/coding/company/${selectedCompany}`
+        `${import.meta.env.VITE_API_URL}/api/questions/coding/company/${selectedCompany}`
       )
       .then((response) => {
         setQuestions(response.data);

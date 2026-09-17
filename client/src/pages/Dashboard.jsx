@@ -27,7 +27,7 @@ function Dashboard() {
 
     axios
       .get(
-        `http://localhost:5000/api/questions/solved/count/${userId}`
+        `${import.meta.env.VITE_API_URL}/api/questions/solved/count/${userId}`
       )
       .then((response) => {
         setSolvedCount(response.data.count);
@@ -41,7 +41,7 @@ function Dashboard() {
 
     axios
       .get(
-        `http://localhost:5000/api/bookmarks/count/${userId}`
+        `${import.meta.env.VITE_API_URL}/api/bookmarks/count/${userId}`
       )
       .then((response) => {
         setBookmarkCount(response.data.count);
@@ -55,7 +55,7 @@ function Dashboard() {
 
     axios
       .get(
-        `http://localhost:5000/api/questions/mcq-result/${userId}`
+        `${import.meta.env.VITE_API_URL}/api/questions/mcq-result/${userId}`
       )
       .then((response) => {
         setMcqResult(response.data);

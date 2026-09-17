@@ -30,7 +30,7 @@ function CodingQuestions() {
     // Get coding questions
     
 axios
-  .get("http://localhost:5000/api/questions/coding")
+  .get(`${import.meta.env.VITE_API_URL}/api/questions/coding`)
   .then((response) => {
     setQuestions(response.data);
     setError("");
@@ -48,7 +48,7 @@ axios
 
     // Get bookmarked questions
     axios
-      .get(`http://localhost:5000/api/bookmarks/${userId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/bookmarks/${userId}`)
       .then((response) => {
 
         const ids = response.data.map(
@@ -95,7 +95,7 @@ axios
 
       axios
         .delete(
-          `http://localhost:5000/api/bookmarks/${userId}/${questionId}`
+          `${import.meta.env.VITE_API_URL}/api/bookmarks/${userId}/${questionId}`
         )
         .then(() => {
 
@@ -112,7 +112,7 @@ axios
 
       axios
         .post(
-          "http://localhost:5000/api/bookmarks",
+          `${import.meta.env.VITE_API_URL}/api/bookmarks`,
           {
             user_id: userId,
             question_id: questionId

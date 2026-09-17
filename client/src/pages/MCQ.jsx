@@ -24,7 +24,7 @@ function MCQ() {
     }
 
     axios
-      .get("http://localhost:5000/api/questions/mcq")
+      .get(`${import.meta.env.VITE_API_URL}/api/questions/mcq`)
       .then((response) => {
         setQuestions(response.data);
       })
@@ -96,7 +96,7 @@ function MCQ() {
 
 
     axios.post(
-      "http://localhost:5000/api/questions/mcq-result",
+      `${import.meta.env.VITE_API_URL}/api/questions/mcq-result`,
       {
         user_id: userId,
         score: totalScore,

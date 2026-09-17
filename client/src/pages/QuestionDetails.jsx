@@ -25,7 +25,7 @@ function QuestionDetails() {
 
     // Get question
     axios
-      .get(`http://localhost:5000/api/questions/coding/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/questions/coding/${id}`)
       .then((response) => {
         setQuestion(response.data);
       })
@@ -36,7 +36,7 @@ function QuestionDetails() {
 
     // Check whether already solved
     axios
-      .get(`http://localhost:5000/api/questions/solved/${userId}/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/questions/solved/${userId}/${id}`)
       .then((response) => {
         setSolved(response.data.solved);
       })
@@ -56,7 +56,7 @@ function QuestionDetails() {
 
     axios
       .post(
-        "http://localhost:5000/api/questions/solved",
+        `${import.meta.env.VITE_API_URL}/api/questions/solved`,
         {
           user_id: userId,
           question_id: id

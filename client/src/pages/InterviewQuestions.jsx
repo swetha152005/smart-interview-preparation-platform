@@ -8,7 +8,7 @@ function InterviewQuestions() {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5000/api/questions/interview")
+      .get(`${import.meta.env.VITE_API_URL}/api/questions/interview`)
       .then((response) => {
         setQuestions(response.data);
       })

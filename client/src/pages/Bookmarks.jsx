@@ -20,7 +20,7 @@ function Bookmarks() {
     }
 
     axios
-      .get(`http://localhost:5000/api/bookmarks/${userId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/bookmarks/${userId}`)
       .then((response) => {
         setBookmarks(response.data);
       })
@@ -35,7 +35,7 @@ function Bookmarks() {
 
     axios
       .delete(
-        `http://localhost:5000/api/bookmarks/${userId}/${questionId}`
+        `${import.meta.env.VITE_API_URL}/api/bookmarks/${userId}/${questionId}`
       )
       .then(() => {
 
