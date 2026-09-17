@@ -2,6 +2,17 @@
 
 A full-stack web application designed to help software engineering aspirants prepare for technical interviews through coding practice, MCQs, company-specific questions, bookmarks, and progress tracking.
 
+## 🌐 Live Demo
+
+**Live Application:**
+https://smart-interview-preparation-platfor-one.vercel.app/
+
+**Frontend:** Vercel
+**Backend:** Render
+**Database:** Aiven MySQL
+
+---
+
 ## 🎯 Project Overview
 
 Preparing for software interviews often requires using multiple platforms for coding problems, MCQs, company-specific questions, and progress tracking.
@@ -108,7 +119,14 @@ Dashboard provides an overview of:
 ### Database
 
 * MySQL
+* Aiven MySQL
 * MySQL Workbench
+
+### Deployment
+
+* Vercel — Frontend
+* Render — Backend
+* Aiven — Production Database
 
 ### Development Tools
 
@@ -122,24 +140,26 @@ Dashboard provides an overview of:
 ## 🏗️ System Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │       React UI       │
-                    │      Frontend        │
-                    └──────────┬───────────┘
-                               │
-                            Axios
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    Express Server    │
-                    │       REST API       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │        MySQL         │
-                    │      Database        │
-                    └──────────────────────┘
+                    ┌─────────────────────────┐
+                    │       React UI          │
+                    │       Frontend          │
+                    │        Vercel           │
+                    └────────────┬────────────┘
+                                 │
+                               Axios
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │     Express Server      │
+                    │       REST API          │
+                    │        Render           │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │        MySQL            │
+                    │     Aiven Database      │
+                    └─────────────────────────┘
 ```
 
 ---
@@ -148,6 +168,7 @@ Dashboard provides an overview of:
 
 ```text
 Smart-Interview-Preparation-Platform/
+
 │
 ├── client/
 │   │
@@ -294,10 +315,11 @@ Make sure the following are installed:
 * MySQL
 * Git
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/swetha152005/smart-interview-preparation-platform.git
+
 cd Smart-Interview-Preparation-Platform
 ```
 
@@ -312,10 +334,13 @@ Create a `.env` file:
 
 ```env
 PORT=5000
+
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=YOUR_MYSQL_PASSWORD
 DB_NAME=interview_prep
+DB_PORT=3306
+
 JWT_SECRET=YOUR_SECRET_KEY
 ```
 
@@ -345,6 +370,50 @@ The frontend will run on the Vite development server.
 
 ---
 
+## 🌍 Production Deployment
+
+The application is deployed using a three-part architecture.
+
+### Frontend — Vercel
+
+The React/Vite frontend is deployed on Vercel.
+
+```text
+https://smart-interview-preparation-platfor-one.vercel.app/
+```
+
+### Backend — Render
+
+The Node.js/Express backend is deployed on Render.
+
+```text
+https://smart-interview-backend-59p5.onrender.com
+```
+
+### Database — Aiven
+
+The production MySQL database is hosted on Aiven.
+
+The backend connects to the production database using environment variables, keeping database credentials and secrets outside the source code.
+
+### Production API Configuration
+
+The frontend uses:
+
+```env
+VITE_API_URL=https://smart-interview-backend-59p5.onrender.com
+```
+
+For local development:
+
+```env
+VITE_API_URL=http://localhost:5000
+```
+
+Sensitive credentials such as database passwords and JWT secrets are stored as environment variables and are not committed to GitHub.
+
+---
+
 ## 🧪 Testing
 
 The application was tested by verifying:
@@ -363,6 +432,8 @@ The application was tested by verifying:
 * Company-wise question filtering
 * Dashboard progress statistics
 * Invalid/expired authentication handling
+* Production frontend-to-backend API communication
+* Production database connectivity
 
 API endpoints can also be tested using Postman.
 
@@ -458,8 +529,9 @@ Planned improvements include:
 * Admin dashboard for question management
 * Password reset functionality
 * Refresh-token based authentication
-* Deployment with production database
-* Automated testing and CI/CD
+* Automated testing
+* CI/CD pipeline
+* Improved analytics and personalized preparation recommendations
 
 ---
 
@@ -480,12 +552,15 @@ Through this project, I gained practical experience in:
 * Git and GitHub workflow
 * Debugging frontend and backend issues
 * Designing responsive user interfaces
+* Deploying a full-stack application
+* Managing production environment variables
+* Connecting a cloud-hosted backend with a cloud MySQL database
 
 ---
 
 ## 🎓 Project Goal
 
-The main goal of this project is to create a practical interview preparation platform while gaining hands-on experience in full-stack web development, authentication, database management, API design, and frontend engineering.
+The main goal of this project is to create a practical interview preparation platform while gaining hands-on experience in full-stack web development, authentication, database management, API design, deployment, and frontend engineering.
 
 ---
 
@@ -495,5 +570,10 @@ The main goal of this project is to create a practical interview preparation pla
 
 Built as a full-stack software engineering project focused on interview preparation and practical web development.
 
-```
-```
+### 🔗 Project Links
+
+* **Live Application:** https://smart-interview-preparation-platfor-one.vercel.app/
+* **GitHub Repository:** https://github.com/swetha152005/smart-interview-preparation-platform
+* **Backend API:** https://smart-interview-backend-59p5.onrender.com
+
+
