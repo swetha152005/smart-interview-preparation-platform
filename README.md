@@ -474,44 +474,29 @@ Add screenshots of the following pages here:
 
 ### Home Page
 
-```text
-[ Add Home Page Screenshot ]
-```
 
-### Login
+![ Home Page ](/screenshots/homepage%20(2).png)
 
-```text
-[ Add Login Screenshot ]
-```
 
-### Dashboard
+### Dash Board
 
-```text
-[ Add Dashboard Screenshot ]
-```
 
-### Coding Questions
+![ DashBoard ](/screenshots/dashboard.png)
 
-```text
-[ Add Coding Questions Screenshot ]
-```
 
-### MCQ Quiz
 
-```text
-[ Add MCQ Screenshot ]
-```
 
-### Company-wise Questions
+### Register Page
 
-```text
-[ Add Company Questions Screenshot ]
-```
+
+![Register Page ](/screenshots/register.png)
+
+
 
 ### My Bookmarks
 
 ```text
-[ Add Bookmarks Screenshot ]
+[ Bookmarks ](/screenshots/bookmark.png)
 ```
 
 ---
